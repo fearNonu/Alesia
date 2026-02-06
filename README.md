@@ -3,173 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Alesia 💖</title>
+  <title>For Alesia <3</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body {
+      margin: 0; min-height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
+      display: flex; justify-content: center; align-items: center;
+      overflow: hidden; color: #333;
     }
 
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      overflow: hidden;
+    /* Floating hearts */
+    .heart-float {
+      position: absolute; bottom: -40px; font-size: 22px;
+      color: rgba(255, 105, 180, 0.7);
+      animation: floatUp linear infinite; pointer-events: none;
+    }
+    @keyframes floatUp {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to { transform: translateY(-110vh) scale(1.6); opacity: 0; }
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.28);
-      backdrop-filter: blur(14px);
-      border-radius: 30px;
-      padding: 44px 34px;
-      max-width: 480px;
-      width: 100%;
-      box-shadow: 0 28px 55px rgba(0, 0, 0, 0.25);
-      animation: fadeIn 1.2s ease;
-      position: relative;
+      background: #fff0f6; width: 90%; max-width: 520px;
+      border-radius: 25px; padding: 30px; text-align: center;
+      box-shadow: 0 25px 50px rgba(255,105,180,0.35);
+      animation: fadeIn 1s ease; position: relative; z-index: 2;
     }
-
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 1.15rem;
-      line-height: 1.65;
-      margin-bottom: 26px;
-    }
-
-    .kitty {
-      width: 120px;
-      margin: 0 auto 14px;
-      border-radius: 18px;
-    }
-
-    .heart {
-      font-size: 3.2rem;
-      margin: 14px 0 22px;
-      animation: pulse 1.5s infinite;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
+    h1 { color: #ff4d88; margin-bottom: 10px; }
+    p { line-height: 1.6; margin-bottom: 18px; font-size: 16px; }
+    .buttons { display: flex; justify-content: center; gap: 18px; margin-top: 20px; }
     button {
-      background: #fff;
-      color: #ff4d88;
-      border: none;
-      border-radius: 999px;
-      padding: 14px 26px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      border: none; border-radius: 30px; padding: 14px 26px;
+      font-size: 17px; cursor: pointer; transition: transform 0.25s ease;
     }
+    .yes { background: #ff69b4; color: #fff; }
+    .no { background: #ffe4ec; color: #ff4d88; }
+    .hidden { display: none; }
+    .heart { font-size: 42px; animation: pulse 1.3s infinite; }
+    .kitty { width: 90px; margin: 10px; }
+    .kitty-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.3);
+    @keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.25);} 100%{transform:scale(1);} }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(25px);} to{opacity:1;transform:translateY(0);} }
+
+    /* Kiss & Hug animation */
+    .hug {
+      font-size: 60px; animation: hug 2s ease infinite;
     }
-
-    .hidden {
-      display: none;
-      margin-top: 24px;
-      font-size: 1.2rem;
-      animation: fadeIn 0.8s ease;
-    }
-
-    .floating-hearts span {
-      position: absolute;
-      bottom: -40px;
-      font-size: 1.5rem;
-      animation: floatUp 6s infinite;
-      opacity: 0.8;
-    }
-
-    .floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .floating-hearts span:nth-child(2) { left: 30%; animation-delay: 1.5s; }
-    .floating-hearts span:nth-child(3) { left: 50%; animation-delay: 3s; }
-    .floating-hearts span:nth-child(4) { left: 70%; animation-delay: 2s; }
-    .floating-hearts span:nth-child(5) { left: 90%; animation-delay: 4s; }
-
-    @keyframes pulse {
+    @keyframes hug {
       0% { transform: scale(1); }
-      50% { transform: scale(1.15); }
+      50% { transform: scale(1.3); }
       100% { transform: scale(1); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 0; }
-      20% { opacity: 0.9; }
-      to { transform: translateY(-110vh); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <div class="floating-hearts">
-    <span>💗</span>
-    <span>💖</span>
-    <span>💕</span>
-    <span>💞</span>
-    <span>💓</span>
+
+  <!-- PAGE 1 -->
+  <div class="card" id="valentine-card">
+    <div class="kitty-row">
+      <img class="kitty" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" />
+      <img class="kitty" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" />
+    </div>
+    <h1>Alesia </h1>
+    <p>I made this little pink world just for you.<br>Will you be my Valentine?</p>
+    <div class="buttons">
+      <button class="yes" id="yesBtn" onclick="goToSorry()">Yes I want <33333</button>
+      <button class="no">No ?:(</button>
+    </div>
   </div>
 
-  <div class="card">
-    <img class="kitty" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Hello Kitty" />
-    <h1>Dear Alesia 💕</h1>
-    <h2>This is for you</h2>
-    <div class="heart">💖</div>
-    <p>
-      I know you’re upset, and I’m truly sorry if I hurt you.
-      You mean the world to me, and I never want to lose you.
-    </p>
-
-    <p><strong>Will you forgive me?</strong></p>
-
-    <div class="buttons">
-      <button onclick="yesForgive()">Yes 💕</button>
-      <button onclick="yesForgive()">Yes 💖</button>
+  <!-- PAGE 2: SORRY + KISS/HUG -->
+  <div class="card hidden" id="sorry-card">
+    <div class="kitty-row">
+      <img class="kitty" src="https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif" />
+      <img class="kitty" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" />
     </div>
+    <div class="hug"><3333</div>
+    <h1>I'm really sorry, Alesia</h1>
+    <p>I know I hurt you and it breaks my heart. You never deserved that.</p>
+    <p>Please believe my apology comes from the deepest place in my heart.</p>
+    <button class="yes" onclick="goToPromise()">Continue ??</button>
+  </div>
 
-    <div id="finalMessage" class="hidden">
-      <img class="kitty" src="https://media.giphy.com/media/l4FGGafcOHmrlQxG0/giphy.gif" alt="Hello Kitty Love" />
-      <p>
-        Thank you, my love 🤍<br />
-        Alesia, will you be my Valentine?
-      </p>
-      <p><strong>Happy Valentine’s Day 💐</strong></p>
-    </div>
+  <!-- PAGE 3: PROMISE -->
+  <div class="card hidden" id="promise-card">
+    <div class="heart"></div>
+    <h1>My Promise to You</h1>
+    <p>Alesia, I promise to listen more, care deeper, and never take you for granted.</p>
+    <p>I promise to show you love through actions, respect, patience, and honesty.</p>
+    <p>No matter what, I choose you. Every day.</p>
+    <p><strong>I love you endlessly <3 </strong></p>
   </div>
 
   <script>
-    function yesForgive() {
-      document.querySelector('.buttons').style.display = 'none';
-      document.getElementById('finalMessage').style.display = 'block';
+    /* Yes button grows more every hover */
+    let scale = 1;
+    const yesBtn = document.getElementById('yesBtn');
+    yesBtn.addEventListener('mouseenter', () => {
+      scale += 0.15;
+      yesBtn.style.transform = `scale(${scale})`;
+    });
+
+    function goToSorry() {
+      document.getElementById('valentine-card').classList.add('hidden');
+      document.getElementById('sorry-card').classList.remove('hidden');
     }
+
+    function goToPromise() {
+      document.getElementById('sorry-card').classList.add('hidden');
+      document.getElementById('promise-card').classList.remove('hidden');
+    }
+
+    /* Floating hearts */
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart-float';
+      heart.innerText = 'Te iubesccccc<33333';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 400);
   </script>
 </body>
 </html>
